@@ -53,8 +53,8 @@
       }
     },
     "contracts/SplashToken.sol": {
-      "lastModificationDate": 1675319015501,
-      "contentHash": "70d03aef6b9d6fbe0819222c28aefada",
+      "lastModificationDate": 1675327577986,
+      "contentHash": "124b86e77867c8fb08bd0f5b10bbc2b9",
       "sourceName": "contracts/SplashToken.sol",
       "solcConfig": {
         "settings": {
