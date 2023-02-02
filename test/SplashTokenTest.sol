@@ -24,6 +24,10 @@ contract SplashTokenTest is Test {
         assertEq(token.name(), "Splash");
     }
 
+    function testSymbol() public {
+        assertEq(token.symbol(), "SPLSH");
+    }
+
     function testTotalSupply() public {
         assertEq(token.totalSupply(), 100000000 * 10**18);
     }

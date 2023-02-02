@@ -952,8 +952,8 @@
       }
     },
     "test/SplashTokenTest.sol": {
-      "lastModificationDate": 1675326095043,
-      "contentHash": "cc5889b13439a8964ea0ac304a2ef0a7",
+      "lastModificationDate": 1675326479756,
+      "contentHash": "04aaf23d0fd5f9fbe25aa0bdbbe96b46",
       "sourceName": "test/SplashTokenTest.sol",
       "solcConfig": {
         "settings": {
