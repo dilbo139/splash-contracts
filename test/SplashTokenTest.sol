@@ -32,7 +32,7 @@ contract SplashTokenTest is Test {
         assertEq(token.totalSupply(), 100000000 * 10**18);
     }
 
-    function testTransferToken() public {
+    function testTransferFromToken() public {
         address sender = address(this);
         uint256 amount = 1;
 
@@ -46,5 +46,17 @@ contract SplashTokenTest is Test {
 
         uint256 bobBalance = token.balanceOf(bob);
         assertEq(bobBalance, amount);
+    }
+
+    function testTransferToken() public {
+        uint amount = 1;
+
+        assertEq(token.balanceOf(bob), 0);
+
+        vm.expectEmit(true, true, false, true);
+        emit Transfer(address(this), bob, amount);
+        token.transfer(bob, amount);
+
+        assertEq(token.balanceOf(bob), amount);
     }
 }
