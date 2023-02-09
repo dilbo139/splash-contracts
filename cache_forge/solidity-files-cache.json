@@ -53,8 +53,8 @@
       }
     },
     "contracts/SplashToken.sol": {
-      "lastModificationDate": 1675327577986,
-      "contentHash": "124b86e77867c8fb08bd0f5b10bbc2b9",
+      "lastModificationDate": 1675938244312,
+      "contentHash": "0eebcbb1946b651f06c5fa0b7f29e7ef",
       "sourceName": "contracts/SplashToken.sol",
       "solcConfig": {
         "settings": {
@@ -98,7 +98,7 @@
       }
     },
     "contracts/interfaces/IERC20.sol": {
-      "lastModificationDate": 1675269091353,
+      "lastModificationDate": 1675326250813,
       "contentHash": "fa9fb3144cc6097985ea01adb8e52b63",
       "sourceName": "contracts/interfaces/IERC20.sol",
       "solcConfig": {
@@ -952,8 +952,8 @@
       }
     },
     "test/SplashTokenTest.sol": {
-      "lastModificationDate": 1675333858139,
-      "contentHash": "2a0d5cd7056b42c1bc6579f694095eef",
+      "lastModificationDate": 1675940250995,
+      "contentHash": "1bb2cf0be21eabfa32ee95a9baff462d",
       "sourceName": "test/SplashTokenTest.sol",
       "solcConfig": {
         "settings": {
