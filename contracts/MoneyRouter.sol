@@ -7,7 +7,7 @@ import {SuperTokenV1Library} from '@superfluid-finance/ethereum-contracts/contra
 
 error Unauthorized();
 
-contract SplashxRouter {
+contract MoneyRouter {
   // ---------------------------------------------------------------------------------------------
   // STATE VARIABLES
 

@@ -7,7 +7,8 @@
     "compile": "hh compile",
     "test": "hh test --network hardhat",
     "deploy:mumbai": "hh run scripts/deploy.ts --network maticMumbai",
-    "deploytoken:mumbai": "hh run scripts/deploySplashToken.ts --network maticMumbai",
+    "deploy:token:mumbai": "hh run scripts/deploySplashToken.ts --network maticMumbai",
+    "deploy:moneyrouter:mumbai": "hh run scripts/deployMoneyRouter.ts --network maticMumbai",
     "coverage": "hh coverage --network hardhat"
   },
   "devDependencies": {
@@ -41,6 +42,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.1",
-    "@superfluid-finance/ethereum-contracts": "^1.5.0"
+    "@superfluid-finance/ethereum-contracts": "^1.5.0",
+    "@superfluid-finance/sdk-core": "^0.6.1"
   }
 }
