@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "compile": "hh compile",
+    "test": "hh test --network hardhat",
+    "deploy:mumbai": "hh run scripts/deploy.ts --network maticMumbai",
+    "deploytoken:mumbai": "hh run scripts/deploySplashToken.ts --network maticMumbai",
+    "coverage": "hh coverage --network hardhat"
+  },
   "devDependencies": {
     "@ethersproject/abi": "^5.4.7",
     "@ethersproject/providers": "^5.4.7",
