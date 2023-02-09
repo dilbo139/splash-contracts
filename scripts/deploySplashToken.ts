@@ -2,7 +2,14 @@ import {ethers} from 'hardhat';
 
 async function main() {
   const SplashToken = await ethers.getContractFactory('SplashToken');
-  const splashToken = await SplashToken.deploy('Splash', 'SPLSH', 100_000_000);
+
+  const treasuryAddress = '0x76d19953cb0af9A514ADA27DBaAed5d5D1969803';
+  const splashToken = await SplashToken.deploy(
+    'Splash',
+    'SPLSH',
+    100_000_000,
+    treasuryAddress,
+  );
 
   await splashToken.deployed();
 

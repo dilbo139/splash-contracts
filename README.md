@@ -14,4 +14,9 @@ npx hardhat run scripts/deploy.ts
 
 <!-- Local -->
 
+Latest at top:
+
+- SplashToken deployed to 0x40717c47ea72F9800a25d40e77ccdD73015df269
 - SplashToken deployed to 0x5FbDB2315678afecb367f032d93F642f64180aa3
+
+- Super Splash Token deployed to: 0x8276d9e3FD953Ec79D27437E3FA988bA78835754
