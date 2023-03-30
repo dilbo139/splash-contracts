@@ -1,4 +1,6 @@
+// @ts-ignore
 const hre = require('hardhat');
+// @ts-ignore
 const {Framework} = require('@superfluid-finance/sdk-core');
 require('dotenv').config();
 
@@ -6,7 +8,7 @@ require('dotenv').config();
 //1) Make sure you've created your own .env file
 //2) Make sure that you have your network specified in hardhat.config.js
 //3) run: npx hardhat run scripts/deploy.js --network goerli
-async function main() {
+async function mainRouter() {
   // Hardhat always runs the compile task when running scripts with its command
   // line interface.
   //
@@ -28,7 +30,7 @@ async function main() {
   const MoneyRouter = await hre.ethers.getContractFactory('MoneyRouter');
   //deploy the money router account using the proper host address and the address of the first signer
   const moneyRouter = await MoneyRouter.deploy(
-    sf.settings.config.hostAddress,
+    // sf.settings.config.hostAddress,
     signers[0].address,
   );
 
@@ -39,7 +41,7 @@ async function main() {
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch(error => {
+mainRouter().catch(error => {
   console.error(error);
   process.exitCode = 1;
 });

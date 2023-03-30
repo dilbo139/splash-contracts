@@ -2,8 +2,9 @@
 pragma solidity ^0.8.17;
 
 import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
+import {ISuperToken} from '@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperToken.sol';
 
-// import "@openzeppelin/token/ERC20/ERC20.sol";
+// import '@openzeppelin/token/ERC20/ERC20.sol';
 
 contract SplashToken is ERC20 {
   address public treasury;
@@ -11,15 +12,14 @@ contract SplashToken is ERC20 {
   constructor(
     string memory name,
     string memory symbol,
-    uint256 totalSupply,
-    address _treasury
+    uint256 totalSupply
   ) ERC20(name, symbol) {
     // Mint `totalSupply` tokens to msg.sender
     // Similar to how
     // 1 dollar = 100 cents
     // 1 token = 1 * (10 ** decimals)
-    treasury = _treasury;
-    _mint(msg.sender, totalSupply * 10**uint256(decimals()));
+    treasury = msg.sender;
+    _mint(msg.sender, totalSupply * 10 ** uint256(decimals()));
   }
 
   /**
@@ -37,5 +37,15 @@ contract SplashToken is ERC20 {
     amount -= tax;
     super._transfer(from, treasury, tax);
     super._transfer(from, to, amount);
+  }
+
+  function mint(address to, uint256 amount) external {
+    require(msg.sender == treasury, 'Only treasury can mint');
+    _mint(to, amount);
+  }
+
+  function burn(address from, uint256 amount) external {
+    require(msg.sender == treasury, 'Only treasury can burn');
+    _burn(from, amount);
   }
 }

@@ -9,3 +9,9 @@ typechain-types
 cache
 artifacts
 
+# Forge
+cache
+cache_*
+artifacts
+out
+

@@ -9,7 +9,11 @@
     "deploy:mumbai": "hh run scripts/deploy.ts --network maticMumbai",
     "deploy:token:mumbai": "hh run scripts/deploySplashToken.ts --network maticMumbai",
     "deploy:moneyrouter:mumbai": "hh run scripts/deployMoneyRouter.ts --network maticMumbai",
-    "coverage": "hh coverage --network hardhat"
+    "deploy:manager:mumbai": "hh run scripts/deployManager.ts --network maticMumbai",
+    "coverage": "hh coverage --network hardhat",
+    "approve:token:mumbai": "hh run scripts/tokenApproval.ts --network maticMumbai",
+    "verify:token:mumbai": "hh verify --network maticMumbai 0xc4e60521104B16BfBD7e4b3Ff7dF6aE8e1E40195 --constructor-args scripts/tokenArguments.ts",
+    "verify:manager:mumbai": "hh verify --network maticMumbai 0xB0a6672ccbC7f0311Da067B2d6fE0AA285d9f838"
   },
   "devDependencies": {
     "@ethersproject/abi": "^5.4.7",
@@ -21,6 +25,7 @@
     "@nomiclabs/hardhat-ethers": "^2.0.0",
     "@nomiclabs/hardhat-etherscan": "^3.0.0",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@superfluid-finance/sdk-core": "^0.4.4",
     "@typechain/ethers-v5": "^10.1.0",
     "@typechain/hardhat": "^6.1.2",
     "@types/chai": "^4.2.0",
@@ -29,6 +34,7 @@
     "chai": "^4.2.0",
     "dotenv": "^16.0.3",
     "ethers": "^5.4.7",
+    "graphql": "^16.5.0",
     "hardhat": "^2.12.6",
     "hardhat-contract-sizer": "^2.7.0",
     "hardhat-gas-reporter": "^1.0.8",
@@ -43,6 +49,6 @@
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.1",
     "@superfluid-finance/ethereum-contracts": "^1.5.0",
-    "@superfluid-finance/sdk-core": "^0.6.1"
+    "solc": "^0.8.19"
   }
 }

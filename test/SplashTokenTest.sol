@@ -2,19 +2,22 @@
 pragma solidity ^0.8.17;
 import 'forge-std/Test.sol';
 import '../contracts/SplashToken.sol';
+import {ISuperToken} from '@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperToken.sol';
 
 contract SplashTokenTest is Test {
   address public alice = address(0x1);
   address public bob = address(0x2);
   address public treasury = address(0x3);
   SplashToken public token;
+  address public constant superToken =
+    0x8276d9e3FD953Ec79D27437E3FA988bA78835754;
 
   /// @notice Events
   event Transfer(address indexed from, address indexed to, uint256 value);
   event Approval(address indexed owner, address indexed spender, uint256 value);
 
   function setUp() public {
-    token = new SplashToken('Splash', 'SPLSH', 100000000, treasury);
+    token = new SplashToken('Splash', 'SPLSH', 100000000);
   }
 
   function testName() public {
@@ -26,7 +29,7 @@ contract SplashTokenTest is Test {
   }
 
   function testTotalSupply() public {
-    assertEq(token.totalSupply(), 100000000 * 10**18);
+    assertEq(token.totalSupply(), 100000000 * 1e18);
   }
 
   function testTransferFromToken() public {
@@ -56,5 +59,12 @@ contract SplashTokenTest is Test {
     token.transfer(bob, amount);
 
     assertEq(token.balanceOf(bob), amount - tax);
+  }
+
+  function testMint() public {
+    uint256 amount = 1000;
+    token.mint(treasury, amount);
+
+    assertEq(token.balanceOf(treasury), amount);
   }
 }
