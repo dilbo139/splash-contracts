@@ -7,12 +7,14 @@
     "compile": "hh compile",
     "test": "hh test --network hardhat",
     "deploy:mumbai": "hh run scripts/deploy.ts --network maticMumbai",
+    "deploy:token:mbalpha": "hh run scripts/deploySplashToken.ts --network moonbasealpha",
     "deploy:token:mumbai": "hh run scripts/deploySplashToken.ts --network maticMumbai",
     "deploy:moneyrouter:mumbai": "hh run scripts/deployMoneyRouter.ts --network maticMumbai",
     "deploy:manager:mumbai": "hh run scripts/deployManager.ts --network maticMumbai",
     "coverage": "hh coverage --network hardhat",
     "approve:token:mumbai": "hh run scripts/tokenApproval.ts --network maticMumbai",
     "verify:token:mumbai": "hh verify --network maticMumbai 0xc4e60521104B16BfBD7e4b3Ff7dF6aE8e1E40195 --constructor-args scripts/tokenArguments.ts",
+    "verify:token:mbalpha": "hh verify --network moonbasealpha 0xEEdcAF56634099740BaF37df2e4AA247B2753f31 --constructor-args scripts/tokenArguments.ts",
     "verify:manager:mumbai": "hh verify --network maticMumbai 0xB0a6672ccbC7f0311Da067B2d6fE0AA285d9f838"
   },
   "devDependencies": {

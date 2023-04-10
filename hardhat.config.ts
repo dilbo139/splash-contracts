@@ -41,6 +41,13 @@ const config: HardhatUserConfig = {
           ? [process.env.PRIVATE_KEY_MUMBAI]
           : [],
     },
+    moonbasealpha: {
+      url: (process.env.MOONBEAM_ALPHA_URL as string) || '',
+      accounts:
+        process.env.PRIVATE_KEY_MUMBAI !== undefined
+          ? [process.env.PRIVATE_KEY_MUMBAI]
+          : [],
+    },
 
     // goerli: {
     //     url: process.env.GOERLI_URL || "",
@@ -57,7 +64,10 @@ const config: HardhatUserConfig = {
     showTimeSpent: true,
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: {
+      polygonMumbai: process.env.ETHERSCAN_API_KEY || '',
+      moonbaseAlpha: process.env.MOONSCAN_API_KEY || '',
+    },
   },
 };
 

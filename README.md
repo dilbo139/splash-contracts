@@ -15,6 +15,7 @@ npx hardhat run scripts/deploy.ts
 <!-- Local -->
 
 Latest at top:
+- SplashToken Moonbase Alpha Deployed Address: 0xEEdcAF56634099740BaF37df2e4AA247B2753f31
 
 - SplashToken deployed to 0xc4e60521104B16BfBD7e4b3Ff7dF6aE8e1E40195
 - SplashToken deployed to 0x5FbDB2315678afecb367f032d93F642f64180aa3
